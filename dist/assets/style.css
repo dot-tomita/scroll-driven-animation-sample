@@ -1,0 +1,68 @@
+@keyframes scroll-circle-anim {
+  0% {
+    scale: 0.1;
+    background: red;
+  }
+  100% {
+    scale: 1;
+    background: blue;
+  }
+}
+
+@keyframes scroll-circle-anim-in-out {
+  0% {
+    scale: 0.1;
+    background: red;
+  }
+  50% {
+    scale: 1;
+    background: blue;
+  }
+  100% {
+    scale: 0.1;
+    background: red;
+  }
+}
+
+.wrapper {
+  height: 200vh;
+}
+
+.indexItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.indexItem a {
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
+
+.indexItem a:hover {
+  background: #ccc;
+}
+
+.circleScroll {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: scroll-circle-anim ease-in-out;
+  animation-timeline: scroll();
+}
+
+.circleView {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: red;
+  margin: 100vh auto;
+  animation: scroll-circle-anim-in-out ease-in-out;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+}
